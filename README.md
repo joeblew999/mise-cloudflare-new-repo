@@ -10,3 +10,5 @@ shows what's done and what to run next. Everything else is in
 [docs/mise-cloudflare/README.md](docs/mise-cloudflare/README.md).
 
 It deploys on every push: production from `main`, and a preview for every pull request.
+
+A pull request gets its own preview, on its own D1, KV and R2.
