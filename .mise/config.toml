@@ -13,5 +13,5 @@ minimum_release_age_excludes = ["github:joeblew999/mise-cloudflare"]
 use_versions_host = false
 
 [tools]
-"github:joeblew999/mise-check" = "latest"
+"github:joeblew999/mise-check" = "0.4.35"
 "github:joeblew999/mise-cloudflare" = "0.1.51"
