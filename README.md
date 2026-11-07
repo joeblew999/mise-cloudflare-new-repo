@@ -10,9 +10,11 @@ the walk ends.
 `mise-cloudflare init`, which wrote mise-cloudflare's files (`.mise/`, `.github/workflows/cloudflare.yml`, `.claude/`,
 `docs/mise-cloudflare/`, `.gitignore`), then `mise run cloudflare:template`, which wrote the template's Worker
 (`src/worker.js`, one request that touches D1, KV, R2 and a secret; `wrangler.jsonc`; `package.json` and its lockfile;
-`.dev.vars.example`; the `mise.toml` that installs its wrangler). Then it was deployed and connected to Cloudflare's
-Workers Builds: every push is checked (`mise run cloudflare:verify`), every pull request gets a preview, and `main`
-deploys production.
+`.dev.vars.example`; the `mise.toml` that installs its wrangler). On 2026-10-30 it was deployed and connected to
+Cloudflare's Workers Builds, which built a preview for every pull request and production from `main`. The Worker is
+no longer on Cloudflare (2026-11-07), so for now a push is only checked (`mise run cloudflare:verify`, in
+`.github/workflows/cloudflare.yml`), and nothing deploys until `mise run cloudflare:08-deploy` and
+`mise run cloudflare:09-connect-github` are run again.
 
 ```sh
 mise run cloudflare
